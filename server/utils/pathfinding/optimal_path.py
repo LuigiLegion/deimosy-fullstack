@@ -8,9 +8,7 @@ from pathfinding.core.diagonal_movement import DiagonalMovement
 
 # Initializations
 def coordinates(body: dict) -> Tuple[Tuple[int]]:
-    """
-    Creates tuple of start and end coordinate tuples from request body.
-    """
+    """Creates tuple of start and end coordinate tuples from request body."""
 
     start = (body.get("start").get("x"), body.get("start").get("y"))
     end = (body.get("end").get("x"), body.get("end").get("y"))
@@ -23,9 +21,7 @@ def optimal_path(
     end: Tuple[int],
     matrix: List[List[int]],
 ) -> List[Tuple[int]]:
-    """
-    Finds optimal path between two coordinates using the A* algorithm.
-    """
+    """Finds optimal path between two coordinates using the A* algorithm."""
 
     grid = Grid(matrix=matrix)
     start = grid.node(start[0], start[1])

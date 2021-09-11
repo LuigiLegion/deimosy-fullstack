@@ -14,9 +14,7 @@ MATRICES_FILE_PATH = "server/data/matrices.json"
 
 # Initializations
 def matrix(image_path: str) -> List[List[int]]:
-    """
-    Creates matrix from image using its data and size.
-    """
+    """Creates matrix from image using its data and size."""
 
     image = Image.open(image_path)
     grayscale_image = image.convert("L")
@@ -29,9 +27,8 @@ def matrix(image_path: str) -> List[List[int]]:
 
 
 def matrices(image_paths: List[str]) -> List[List[List[int]]]:
-    """
-    Creates list of matrices from images using the matrix utility function.
-    """
+    """Creates list of matrices from images
+    using the matrix utility function."""
 
     return [matrix(path) for path in image_paths]
 
@@ -40,9 +37,7 @@ def write_data_to_file(
     data: Union[dict, List],
     file_path: str,
 ) -> None:
-    """
-    Writes data to file.
-    """
+    """Writes data to file."""
 
     with open(file_path, "w") as f:
         dump(data, f)
